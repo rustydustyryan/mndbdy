@@ -3,11 +3,13 @@ const playBtn = document.getElementById('play');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 const audio = document.getElementById('my-audio');
-const video = document.querySelector('.video');
+const img = document.querySelector('.image');
 const title = document.querySelector('#title');
 const section = document.querySelector('.section');
+const h3 = document.querySelector('h3');
+const p = document.querySelector('p');
 
-// document.querySelector('video').playbackRate = .7;
+// document.querySelector('img').playbackRate = .7;
 
 // Song titles
 const songs = ["Big Sky", "Fragile Ecosystem", "Dive", "Low Tide", "Crystal Pool", "Don't Follow Me", "Debating Extinction"];
@@ -15,13 +17,45 @@ const songs = ["Big Sky", "Fragile Ecosystem", "Dive", "Low Tide", "Crystal Pool
 // Keep track of songs
 let songIndex = 0;
 
+// Update img source, toggle light/dark mode, change text
+function loadImg(song) {
+  if (songIndex >= 0 && songIndex < 3) {
+    section.classList.add('light-mode');
+    section.classList.remove('dark-mode');
+    img.src = `/media/plant.jpg`;
+    h3.innerHTML = "Side A";
+    p.innerHTML =
+    `ALBUM PREVIEW
+    <br>
+    <br>
+    — Big Sky
+    <br>
+    — Fragile Ecosystem
+    <br>
+    — Dive
+    <br>
+    — Sick of Love`;
+  } else {
+    h3.innerHTML = "Side B";
+    p.innerHTML = 
+    `ALBUM PREVIEW
+    <br>
+    <br>
+    — Low Tide
+    <br>
+    — Crystal Pool
+    <br>
+    — Don't Follow Me
+    <br>
+    — Debating Extinction`;
+    section.classList.remove('light-mode');
+    section.classList.add('dark-mode');
+    img.src = `/media/water.jpg`;
+  }
+}
+
 // Initially load song into DOM
 loadSong(songs[songIndex]);
-
-// Update video source
-function loadVideo(song) {
-  video.src = `/media/${songs[songIndex]}.mp4`;
-}
 
 // Update song details
 function loadSong(song) {
@@ -33,10 +67,8 @@ function playSong() {
   musicContainer.classList.add('play');
   playBtn.classList.remove('fa-play');
   playBtn.classList.add('fa-pause');
-  // changes video to match the song
-  loadVideo(songs[songIndex]);
-  // changes the background color to match the song
-  toggleMode();
+  // changes img to match the song
+  loadImg(songs[songIndex]);
 
   audio.play();
 }
@@ -47,7 +79,6 @@ function pauseSong() {
   playBtn.classList.remove('fa-pause');
 
   audio.pause();
-  video.pause();
 }
 
 function prevSong() {
@@ -72,16 +103,6 @@ function nextSong() {
   loadSong(songs[songIndex]);
 
   playSong();
-}
-
-function toggleMode() {
-  if (songIndex <= 2 && songIndex >= 0) {
-    section.classList.add('light-mode');
-    section.classList.remove('dark-mode');
-  } else if (songIndex >= 3 && songIndex <= 6){
-    section.classList.remove('light-mode');
-    section.classList.add('dark-mode');
-  }
 }
 
 // Event listeners
