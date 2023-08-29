@@ -18,7 +18,7 @@ header {
   justify-content: space-between; }
 
 .light-mode {
-  background: #F4F4F4;
+  background: #ebe5de;
   color: #100f14; }
   .light-mode a {
     color: #244577; }
@@ -111,16 +111,16 @@ header {
     width: 85.5%; }
   .section .icons {
     position: relative;
-    font-size: 24px;
     display: block;
     color: #426A96;
-    top: 10px; }
+    top: 10px;
+    font-size: 20px; }
   .section .icons i {
     align-items: center;
     text-align: center;
     cursor: pointer;
     padding: 0 8px;
-    width: 40px; }
+    width: 35px; }
   .section .icons i:hover {
     color: #22374e;
     transition: all .3s ease-in-out; }
@@ -166,6 +166,12 @@ header {
     grid-template-columns: repeat(1, 1fr);
     height: auto;
     padding: 1rem; }
+    .section :nth-child(3) {
+      justify-self: center; }
+    .section :nth-child(4) {
+      width: 100%;
+      max-width: 515px;
+      justify-self: center; }
     .section > p {
       position: relative;
       top: 0;
