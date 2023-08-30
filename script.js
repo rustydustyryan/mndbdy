@@ -22,7 +22,7 @@ function loadImg(song) {
   if (songIndex >= 0 && songIndex < 3) {
     section.classList.add('light-mode');
     section.classList.remove('dark-mode');
-    img.src = `/media/plant.jpg`;
+    img.src = `/dist/media/plant.jpg`;
     h3.innerHTML = "Side A";
     p.innerHTML =
     `ALBUM PREVIEW
@@ -50,7 +50,7 @@ function loadImg(song) {
     — Debating Extinction`;
     section.classList.remove('light-mode');
     section.classList.add('dark-mode');
-    img.src = `/media/water.jpg`;
+    img.src = `/dist/media/water.jpg`;
   }
 }
 
@@ -60,7 +60,7 @@ loadSong(songs[songIndex]);
 // Update song details
 function loadSong(song) {
   title.innerText = song;
-  audio.src = `/media/${song}.mp3`;
+  audio.src = `/dist/media/${song}.mp3`;
 }
 
 function playSong() {
