@@ -41,6 +41,8 @@ header {
   .dark-mode .listen .music-container {
     border-right: #F3EBE9 1px solid;
     border-top: #F3EBE9 1px solid; }
+  .dark-mode .prod p {
+    color: #F3EBE9; }
 
 .ryan {
   max-width: 650px;
@@ -81,7 +83,6 @@ header {
     margin-bottom: 1rem; }
   .section > p {
     position: relative;
-    top: 148px;
     right: 18px; }
   .section .image {
     width: 100%;
@@ -92,10 +93,9 @@ header {
     padding-left: 5rem; }
   .section .listen {
     position: relative;
-    top: 180px;
     right: 0; }
   .section .listen > p {
-    margin-top: 6rem; }
+    margin-top: 14rem; }
   .section .listening p {
     margin: 1rem 0 0 0;
     display: flex;
@@ -122,10 +122,13 @@ header {
     padding: 0 8px;
     width: 35px; }
   .section .icons i:hover {
-    color: #22374e;
+    color: #b04631;
     transition: all .3s ease-in-out; }
   .section .icons i:active {
-    color: #ca4024; }
+    color: #b04631; }
+  .section .prod {
+    grid-column: 2;
+    top: -150px; }
 
 #footer {
   background: #426A96;
@@ -135,8 +138,7 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
-  height: 22vh; }
+  padding: 2rem; }
   #footer > div {
     grid-column: 2;
     text-align: end;
@@ -145,7 +147,8 @@ header {
     flex-direction: column;
     gap: 3rem; }
   #footer a {
-    color: #282828; }
+    color: #282828;
+    cursor: pointer; }
 
 @media (max-width: 1340px) {
   header {
@@ -195,6 +198,8 @@ header {
     .section .icons i {
       width: 35px;
       padding: 0; }
+    .section .prod {
+      display: none; }
   #footer {
     display: block;
     justify-content: center;
@@ -204,6 +209,4 @@ header {
       text-align: center;
       justify-content: center;
       gap: 1rem;
-      margin-right: 0; }
-    #footer .prod {
-      display: none; } }
+      margin-right: 0; } }
